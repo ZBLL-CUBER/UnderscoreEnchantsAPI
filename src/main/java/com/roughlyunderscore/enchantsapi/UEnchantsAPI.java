@@ -14,8 +14,9 @@ public interface UEnchantsAPI {
 	 * @param name the name of the enchantment
 	 * @param level the level of the enchantment
 	 * @throws IllegalArgumentException if the enchantment wasn't found or if the level exceeds the maximum or is lower than 1.
+	 *** @return the enchanted item
 	 */
-	void enchant(ItemStack item, String name, int level) throws IllegalArgumentException;
+	ItemStack enchant(ItemStack item, String name, int level) throws IllegalArgumentException;
 
 	/**
 	 * Enchants an ItemStack with an enchantment, found by this namespaced key
@@ -23,8 +24,9 @@ public interface UEnchantsAPI {
 	 * @param key the namespaced key of the enchantment
 	 * @param level the level of the enchantment
 	 * @throws IllegalArgumentException if the enchantment wasn't found or if the level exceeds the maximum or is lower than 1.
+	 * @return the enchanted item
 	 */
-	void enchant(ItemStack item, NamespacedKey key, int level) throws IllegalArgumentException;
+	ItemStack enchant(ItemStack item, NamespacedKey key, int level) throws IllegalArgumentException;
 
 	/**
 	 * Enchants an ItemStack with a given enchantment
@@ -32,8 +34,9 @@ public interface UEnchantsAPI {
 	 * @param ench the enchantment
 	 * @param level the level of the enchantment
 	 * @throws IllegalArgumentException if the level exceeds the maximum or is lower than 1.
+	 * @return the enchanted item
 	 */
-	void enchant(ItemStack item, Enchantment ench, int level) throws IllegalArgumentException;
+	ItemStack enchant(ItemStack item, Enchantment ench, int level) throws IllegalArgumentException;
 
 	/**
 	 * Enchants a player's item with an enchantment of this name
@@ -73,8 +76,9 @@ public interface UEnchantsAPI {
 	 * @param name the name of the enchantment
 	 * @param level the level of the enchantment
 	 * @throws IllegalArgumentException if the enchantment wasn't found
+	 * @return the enchanted item
 	 */
-	void enchantUnrestricted(ItemStack item, String name, int level) throws IllegalArgumentException;
+	ItemStack enchantUnrestricted(ItemStack item, String name, int level) throws IllegalArgumentException;
 
 	/**
 	 * Enchants an ItemStack with an enchantment, found by this namespaced key with no level restrictions
@@ -82,16 +86,18 @@ public interface UEnchantsAPI {
 	 * @param key the namespaced key of the enchantment
 	 * @param level the level of the enchantment
 	 * @throws IllegalArgumentException if the enchantment wasn't found
+	 * @return the enchanted item
 	 */
-	void enchantUnrestricted(ItemStack item, NamespacedKey key, int level) throws IllegalArgumentException;
+	ItemStack enchantUnrestricted(ItemStack item, NamespacedKey key, int level) throws IllegalArgumentException;
 
 	/**
 	 * Enchants an ItemStack with a given enchantment with no level restrictions
 	 * @param item the item to enchant
 	 * @param ench the enchantment
 	 * @param level the level of the enchantment
+	 * @return the enchanted item
 	 */
-	void enchantUnrestricted(ItemStack item, Enchantment ench, int level);
+	ItemStack enchantUnrestricted(ItemStack item, Enchantment ench, int level);
 
 	/**
 	 * Enchants a player's item with an enchantment of this name with no level restrictions
