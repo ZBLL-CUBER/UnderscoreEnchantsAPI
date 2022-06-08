@@ -11,7 +11,6 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Called when a player uses /ue enchant or an enchantment table.
  */
-@SuppressWarnings("unused")
 public class PreEnchantEvent extends Event implements Cancellable {
 	private boolean cancelled = false;
 	private final @NotNull Player player;

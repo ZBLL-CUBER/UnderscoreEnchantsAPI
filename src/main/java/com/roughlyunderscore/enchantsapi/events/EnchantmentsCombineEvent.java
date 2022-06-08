@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Called when a player combines two items in an anvil, could be books.
  */
-@SuppressWarnings("unused")
 public class EnchantmentsCombineEvent extends Event implements Cancellable {
 	private boolean cancelled = false;
 	private final @NotNull Player player;

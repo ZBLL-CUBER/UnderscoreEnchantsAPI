@@ -14,7 +14,7 @@ public interface UEnchantsAPI {
 	 * @param name the name of the enchantment
 	 * @param level the level of the enchantment
 	 * @throws IllegalArgumentException if the enchantment wasn't found or if the level exceeds the maximum or is lower than 1.
-	 *** @return the enchanted item, or null if the amount of enchantments is at the limit
+	 * @return the enchanted item, or null if the amount of enchantments is at the limit
 	 */
 	ItemStack enchant(ItemStack item, String name, int level) throws IllegalArgumentException;
 
