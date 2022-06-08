@@ -14,13 +14,12 @@ public class EnchantmentsCombineEvent extends Event implements Cancellable {
 	private boolean cancelled = false;
 	private final @NotNull Player player;
 
-	private final @NotNull ItemStack firstItem, secondItem;
+	private final @NotNull ItemStack result;
 	private static final HandlerList HANDLERS = new HandlerList();
 
-	public EnchantmentsCombineEvent(@NotNull Player player, @NotNull ItemStack firstItem, @NotNull ItemStack secondItem) {
+	public EnchantmentsCombineEvent(@NotNull Player player, @NotNull ItemStack result) {
 		this.player = player;
-		this.firstItem = firstItem;
-		this.secondItem = secondItem;
+		this.result = result;
 	}
 
 	/**
@@ -32,17 +31,11 @@ public class EnchantmentsCombineEvent extends Event implements Cancellable {
 	}
 
 	/**
-	 * @return The first item involved in the event.
+	 * @return The resulting item.
 	 */
-	public @NotNull ItemStack getFirstItem() {
-		return firstItem;
-	}
-
-	/**
-	 * @return The second item involved in the event.
-	 */
-	public @NotNull ItemStack getSecondItem() {
-		return secondItem;
+	@NotNull
+	public ItemStack getResult() {
+		return this.result;
 	}
 
 	@Override
