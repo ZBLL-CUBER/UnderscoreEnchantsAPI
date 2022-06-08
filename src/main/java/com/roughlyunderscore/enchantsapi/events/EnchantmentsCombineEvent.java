@@ -13,12 +13,19 @@ import org.jetbrains.annotations.NotNull;
 public class EnchantmentsCombineEvent extends Event implements Cancellable {
 	private boolean cancelled = false;
 	private final @NotNull Player player;
-
-	private final @NotNull ItemStack result;
+	private @NotNull ItemStack result;
 	private static final HandlerList HANDLERS = new HandlerList();
 
 	public EnchantmentsCombineEvent(@NotNull Player player, @NotNull ItemStack result) {
 		this.player = player;
+		this.result = result;
+	}
+
+	/**
+	 * Sets the resulting item to a new one.
+	 * @param result The new resulting item
+	 */
+	public void setResult(@NotNull ItemStack result) {
 		this.result = result;
 	}
 
