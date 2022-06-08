@@ -16,14 +16,23 @@ public class PreEnchantEvent extends Event implements Cancellable {
 	private boolean cancelled = false;
 	private final @NotNull Player player;
 	private final @NotNull Enchantment enchantment;
+	private final @NotNull ItemStack item;
 	private int level;
 
 	private static final HandlerList HANDLERS = new HandlerList();
 
-	public PreEnchantEvent(@NotNull Player player, @NotNull Enchantment enchantment, int level) {
+	public PreEnchantEvent(@NotNull Player player, @NotNull Enchantment enchantment, int level, @NotNull ItemStack item) {
 		this.player = player;
 		this.enchantment = enchantment;
 		this.level = level;
+		this.item = item;
+	}
+
+	/**
+	 * @return The item involved in the event.
+	 */
+	public @NotNull ItemStack getItem() {
+		return item;
 	}
 
 	/**
@@ -58,7 +67,7 @@ public class PreEnchantEvent extends Event implements Cancellable {
 	}
 
 	@Override
-	public HandlerList getHandlers() {
+	public @NotNull HandlerList getHandlers() {
 		return HANDLERS;
 	}
 

@@ -1,13 +1,11 @@
 package com.roughlyunderscore.enchantsapi.events;
 
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
+import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Map;
 
 /**
  * Called when a player combines two items in an anvil, could be books.
@@ -17,12 +15,13 @@ public class EnchantmentsCombineEvent extends Event implements Cancellable {
 	private boolean cancelled = false;
 	private final @NotNull Player player;
 
-	private final @NotNull Map<Enchantment, Integer> enchantments;
+	private final @NotNull ItemStack firstItem, secondItem;
 	private static final HandlerList HANDLERS = new HandlerList();
 
-	public EnchantmentsCombineEvent(@NotNull Player player, @NotNull Map<Enchantment, Integer> enchantments) {
+	public EnchantmentsCombineEvent(@NotNull Player player, @NotNull ItemStack firstItem, @NotNull ItemStack secondItem) {
 		this.player = player;
-		this.enchantments = enchantments;
+		this.firstItem = firstItem;
+		this.secondItem = secondItem;
 	}
 
 	/**
@@ -34,14 +33,21 @@ public class EnchantmentsCombineEvent extends Event implements Cancellable {
 	}
 
 	/**
-	 * @return A map of all the enchantments and their levels, involved in the event.
+	 * @return The first item involved in the event.
 	 */
-	public Map<Enchantment, Integer> getEnchantments() {
-		return this.enchantments;
+	public @NotNull ItemStack getFirstItem() {
+		return firstItem;
+	}
+
+	/**
+	 * @return The second item involved in the event.
+	 */
+	public @NotNull ItemStack getSecondItem() {
+		return secondItem;
 	}
 
 	@Override
-	public HandlerList getHandlers() {
+	public @NotNull HandlerList getHandlers() {
 		return HANDLERS;
 	}
 
