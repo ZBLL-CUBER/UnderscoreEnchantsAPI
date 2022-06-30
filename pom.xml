@@ -4,10 +4,32 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.roughlyunderscore.enchantsapi</groupId>
+    <groupId>pl.7m.roughlyunderscore.enchantsapi</groupId>
     <artifactId>UnderscoreEnchantsAPI</artifactId>
-    <version>2.0</version>
+    <version>2.0.1</version>
     <packaging>jar</packaging>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>ZBLL/Roughly_</name>
+            <email>thejam2000000@gmail.com</email>
+            <organization>ZBLL/Roughly_</organization>
+            <organizationUrl>roughlyunderscore.7m.pl</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/ZBLL-CUBER/UnderscoreEnchantsAPI.git</connection>
+        <developerConnection>scm:git:ssh://github.com:ZBLL-CUBER/UnderscoreEnchantsAPI.git</developerConnection>
+        <url>https://github.com/ZBLL-CUBER/UnderscoreEnchantsAPI</url>
+    </scm>
 
     <name>UnderscoreEnchantsAPI</name>
 
@@ -16,7 +38,6 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <url>roughlyunderscore.7m.pl</url>
 
     <reporting>
         <plugins>
