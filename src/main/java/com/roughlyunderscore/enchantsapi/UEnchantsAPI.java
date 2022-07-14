@@ -9,6 +9,40 @@ import org.bukkit.inventory.ItemStack;
 public interface UEnchantsAPI {
 
 	/**
+	 * Disenchants an ItemStack - removes an enchantment of this name
+	 * @param item the item to disenchant
+	 * @param name the name of the enchantment
+	 * @throws IllegalArgumentException if the enchantment wasn't found or if the item doesn't have the given enchantment
+	 * @return the disenchanted item
+	 */
+	ItemStack disenchant(ItemStack item, String name) throws IllegalArgumentException;
+
+	/**
+	 * Disenchants an ItemStack - removes an enchantment, found by this namespaced key
+	 * @param item the item to disenchant
+	 * @param key the namespaced key of the enchantment
+	 * @throws IllegalArgumentException if the enchantment wasn't found or if the item doesn't have the given enchantment
+	 * @return the disenchanted item
+	 */
+	ItemStack disenchant(ItemStack item, NamespacedKey key) throws IllegalArgumentException;
+
+	/**
+	 * Disenchants an ItemStack - removes a given enchantment
+	 * @param item the item to disenchant
+	 * @param ench the enchantment
+	 * @throws IllegalArgumentException if the item doesn't have the given enchantment
+	 * @return the disenchanted item
+	 */
+	ItemStack disenchant(ItemStack item, Enchantment ench) throws IllegalArgumentException;
+
+	/**
+	 * Fully disenchants an ItemStack
+	 * @param item the item to disenchant
+	 * @return the disenchanted item
+	 */
+	ItemStack fullyDisenchant(ItemStack item);
+
+	/**
 	 * Enchants an ItemStack with an enchantment of this name
 	 * @param item the item to enchant
 	 * @param name the name of the enchantment

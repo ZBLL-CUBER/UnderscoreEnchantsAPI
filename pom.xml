@@ -20,7 +20,7 @@
         <developer>
             <name>ZBLL/Roughly_</name>
             <email>thejam2000000@gmail.com</email>
-            <organization>ZBLL/Roughly_</organization>
+            <organization>roughlyunderscore.7m.pl</organization>
             <organizationUrl>roughlyunderscore.7m.pl</organizationUrl>
         </developer>
     </developers>
@@ -35,9 +35,21 @@
 
     <description>An API of UnderscoreEnchants for the developers to use.</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>16</java.version>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
     </properties>
+
+    <contributors>
+        <contributor>
+            <name>mfnalex</name>
+        </contributor>
+        <contributor>
+            <name>Ilamparithi</name>
+        </contributor>
+    </contributors>
 
     <reporting>
         <plugins>
@@ -65,11 +77,34 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.4.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
-                    <show>public</show>
+                    <links>
+                        <link>https://hub.spigotmc.org/javadocs/bukkit/</link>
+                        <link>https://javadoc.io/doc/org.jetbrains/annotations-java5/23.0.0/</link>
+                    </links>
                 </configuration>
             </plugin>
             <plugin>
@@ -121,6 +156,5 @@
             <version>23.0.0</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
 </project>
