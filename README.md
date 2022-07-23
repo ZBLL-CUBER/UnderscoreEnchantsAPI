@@ -1,3 +1,4 @@
+[![License](https://img.shields.io/github/license/zbll-cuber/underscoreenchantsapi.svg?style=flat-square)](https://github.com/ZBLL-CUBER/UnderscoreEnchantsAPI/blob/master/LICENSE)
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.zbll-cuber.enchantsapi/UnderscoreEnchantsAPI.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.zbll-cuber.enchantsapi%22%20AND%20a:%22UnderscoreEnchantsAPI%22)
 
 # UnderscoreEnchantsAPI
